@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+	<title>Top blogs on Medicine, Motivation, Lifestyle and facts.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,600&display=swap" rel="stylesheet">
+
+<style>
+	
+	.responsive{
+		width: 20%;
+		height: auto;
+		padding-left: 6%;
+	}
+
+	.logo{
+		width: 18%;
+		height: auto;
+		display: block;
+		float: right;
+		margin-right: 40%;
+		margin-top: 2%;
+	}
+
+	.button {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #b76e22;
+	  color: #b76e22;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 165px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.button span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.button span:after {
+	  content: '\00ab';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  left: -20px;
+	  transition: 0.5s;
+	}
+
+	.button:hover span {
+	  padding-left: 25px;
+	}
+
+	.button:hover span:after {
+	  opacity: 1;
+	  left: 0;
+	}
+
+	.buttona {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #b76e22;
+	  color: #b76e22;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 165px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.buttona span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.buttona span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.buttona:hover span {
+	  padding-right: 25px;
+	}
+
+	.buttona:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+
+	.buttonb {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #0e8c8c;
+	  color: #0e8c8c;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 190px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.buttonb span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.buttonb span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.buttonb:hover span {
+	  padding-right: 25px;
+	}
+
+	.buttonb:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+
+	input[type=text], input[type=password] {
+	  width: 90%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	  margin-left: 5%;
+	  margin-bottom: 5%;
+	}
+
+	.cancelbtn:hover{
+		background-color: #b76e22;
+  		color: black;
+	}
+
+	/* Center the image and position the close button */
+	.imgcontainer {
+	  text-align: center;
+	  margin: 24px 0 12px 0;
+	  position: relative;
+	}
+
+	.container {
+	  padding: 16px;
+	}
+
+	span.psw {
+	  float: right;
+	  padding-top: 16px;
+	}
+
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	  padding-top: 60px;
+	}
+
+	/* Modal Content/Box */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	  border: 1px solid #888;
+	  width: 40%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	  position: absolute;
+	  right: 25px;
+	  top: 0;
+	  color: #000;
+	  font-size: 35px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #b76e22;
+	  cursor: pointer;
+	}
+
+	/* Add Zoom Animation */
+	.animate {
+	  -webkit-animation: animatezoom 0.6s;
+	  animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	  from {-webkit-transform: scale(0)} 
+	  to {-webkit-transform: scale(1)}
+	}
+	  
+	@keyframes animatezoom {
+	  from {transform: scale(0)} 
+	  to {transform: scale(1)}
+	}
+
+	/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	  span.psw {
+	     display: block;
+	     float: none;
+	  }
+	  .cancelbtn {
+	     width: 100%;
+	  }
+	}
+
+	.firstb{
+		word-wrap: break-word;
+		width: 80vw;
+		margin-left: 5%;
+	}
+
+	.firstbhead{
+		font-family: 'Arimo', sans-serif;
+		margin-left: 5%;
+		font-size: 3vw;
+	}
+
+	.firstbmhead{
+		font-family: 'Arimo', sans-serif;
+		margin-left: 1%;
+		font-size: 3vw;
+	}
+
+	.toothBrush{
+		width: 330px;
+		height: auto;
+		float: right;
+	}
+
+	.mensCup{
+		width: 330px;
+		height: auto;
+		float: right;
+		margin-top: 2%;
+	}
+
+	.reuCut{
+		width: 420px;
+		height: auto;
+		float: right;
+		margin-left: 10%;
+		margin-top: -1%;
+	}
+
+	.beesWax{
+		width: 330px;
+		height: auto;
+		float: right;
+		margin-top: -1.8%;
+	}
+
+	.reuStraw{
+		width: 400px;
+		height: auto;
+		float: right;
+		margin-top: 1%;
+	}
+
+	.chewToo{
+		width: 400px;
+		height: auto;
+		float: right;
+		margin-top: 0%;
+	}
+
+	.eBags{
+		width: 400px;
+		height: auto;
+		float: right;
+		margin-top: -1%;
+	}
+
+</style>
+
+
+<body>
+
+	<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:172px; height: all; right:0;" id="mySidebar">
+	  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+	  <button class="button" onclick="document.getElementById('id01').style.display='block'"><span>Login</span></button>
+	  <br>
+		<button class="button" onclick="document.getElementById('id02').style.display='block'"><span>Sign Up</span></button>
+		<br>
+	  <button class="button" onclick="document.getElementById('id03').style.display='block'"><span>Subscribe</span></button>
+	  <br>
+	  <a href="AboutPage.html"><button class="button"><span>About</span></button></a>
+	  <br>
+	 <a href="Contact.html"><button class="button"><span>Contact</span></button></a>
+	   <br>
+	  <button class="buttona"><span>Blogs</span></button>
+	</div>
+		
+
+
+
+	<div id="id01" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Login</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;"> Welocome back to the world of Blogs!</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Username" name="uname" required>
+	      <br>
+	      <input type="password" placeholder="Enter Your Password" name="psw" required>
+	      <br>
+	     
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	      <br>
+	       <button type="submit" class="buttona"><span>Login</span></button>
+	       <span class="psw"><a href="#">Forgot Password?</a></span>
+	    </div>
+	  </form>
+	</div>
+
+
+
+
+	<div id="id02" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Signup</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;"> Your first step to start experiencing the blogs,<br> in a few seconds.</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Full Name" name="uname" required>
+
+	      <input type="text" placeholder="Enter Your Username" name="psw" required>
+
+	      <input type="text" placeholder="Enter Your Email ID" name="psw" required>
+
+	      <input type="password" placeholder="Enter Your Password" name="psw" required>
+
+	      <input type="password" placeholder="Re-Enter Your Password" name="psw" required>
+	        
+	      <br>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Send Notifications
+	      </label>
+	      <br>
+	      <button type="submit" class="buttona"><span>Sign Up</span></button>
+	    </div>
+	  </form>
+	</div>
+
+
+
+	<div id="id03" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Subscribe</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;">To get notified when a new blog is published!</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Email ID" name="uname" required>
+	      <br>
+	       <button type="submit" class="buttona"><span>Subscribe</span></button>
+	    </div>
+	  </form>
+	</div>
+
+	<div class="w3-main" style="margin-right:200px">
+	<div style="color: #b76e22;">
+	  <button class="w3-button w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+	</div>
+
+	</div>
+
+	<div>
+		<a href="Home.html"><img src="https://media.tenor.com/images/ee7ec2aee427884dab05c1348deae810/tenor.gif" alt="SipABlog" class="responsive" style="margin-top: 1%;"></a>
+		<a href="Home.html"><img src="./images/logo.png" class="logo" class="responsive"></a>
+	</div>
+	
+	
+	<br>
+	<br>
+	<br>
+
+	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;">
+		<h2 class="firstbhead">LIST OF SUSTAINABLE SWAPS</h2>
+		<div class="firstb">
+			<p>
+				Earth is already dying and people think not getting a plastic straw and their Starbucks cup is enough to save it. 
+				It’s high time to switch to eco friendly lifestyle to make this world a better place for us as well as our future generations. 
+				Eco-friendly products are best because they reduce the carbon footprint and they are biodegradable.
+			</p>
+
+			<img src="./images/toothbrush.jpeg" class="toothBrush">
+
+			<h3 class="firstbmhead">Bamboo Tooth Brush</h3>
+
+			<p>
+				Plastic tooth brush accounts for the global plastic waste problem and it is non biodegradable and unsustainable. 
+				Every year billions of plastic tooth brushes are thrown away , they finally end up in Oceans or landfills and cause immense pollution. 
+				Advantages of bamboo tooth brush :<br>
+					1. Eco friendly and organic <br>
+					2. Sustainable and renewable <br>
+				<a href="https://sustainkart.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=none&q=Tooth%20brush%20*"><p>Shop here-: SustainKart - Bamboo Tooth Brush</p></a>
+			</p>
+
+			<br>
+
+			<img src="./images/menscup.jpeg" class="mensCup">
+
+			<h3 class="firstbmhead">Menstrual Cups</h3>
+
+			<p>
+				Usage of tampons and sanitary pads made up of plastics are extremely harmful and toxic to environment. As they are non biodegradable, they end up in oceans and landfills making water and soil toxic ,which indirectly effects the aquatic life also . 
+				Using one menstrual cup can replace the usage of tampons and pads for 4-5years , reducing the waste byproduct’s . 
+				<a href="https://sustainkart.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=none&q=Menstrual%20cup*"><p>Shop here-: SustainKart - Menstrual Cup</p></a>
+			</p>
+
+			<br>
+
+			<img src="./images/copperbot.jpeg" class="mensCup">
+
+			<h3 class="firstbmhead">Reusable Water Bottles</h3>
+
+			<p>
+				Annually Indians buy billions of plastic water/beverage bottles contributing to major percentage of non biodegradable waste. 
+				The alternatives are :
+				1. Insulated stainless steel water bottles 
+				2. Copper water bottles 
+				3. Glass water bottles 
+				4. Aluminium water bottle 
+				<a href="https://sustainkart.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=none&q=Copper%20water%20bottles*"><p>Shop here-: SustainKart - Reusable Water Bottles</p></a>
+			</p>
+
+			<br>
+			
+			
+			<h3 class="firstbmhead">Reusable Cutlery</h3>
+
+			<img src="./images/reucut.jpeg" class="reuCut">
+
+			<p>
+				They are more durable ,safe ,sustainable, biodegradable and eco-friendly.<br>
+				1. Wooden cutlery <br>
+				2. Biodegradable coffee cups <br>
+				3. Bamboo pulp plates <br>
+				4. Wooden skewers <br>
+				5. Coconut wood cutlery <br>
+				<a href="https://sustainkart.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=none&q=Spoons*"><p>Shop here-: SustainKart - Reusable Cutlery</p></a>
+			</p>
+
+			<br>
+
+			<br>
+
+			<img src="./images/beeswax.jpeg" class="beesWax">
+
+			<h3 class="firstbmhead">Beeswax wraps instead of <br>plastic wraps/cling wraps</h3>
+
+			<p>
+				Beeswax wraps are the natural alternative to plastic wraps for food storage or packaging. They are eco friendly and exactly replicate cling wraps.
+				<a href="https://www.amazon.in/Savourio-Reusable-Beeswax-Food-Wrap/dp/B07W998QJQ"><p>Shop here-: Amazon - Reusable Beeswax Food Wrap</p></a>
+			</p>
+
+			<br>
+
+			<br>
+
+			<br>
+
+			<img src="./images/reustraw.jpeg" class="reuStraw">
+
+			<h3 class="firstbmhead">Reusable Straws</h3>
+
+			<p>
+				Eco friendly alternatives of plastic straws <br>
+				1. Stainless steel straws <br>
+				2. Bamboo straws <br>
+				3. Glass straws <br>
+				<a href="https://sustainkart.com/products/retrostraws-premium-drinking-straws-made-from-rice?variant=38236805136571&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic"><p>Shop here-: SustainKart - Reusable Straws</p></a>
+			</p>
+
+			<br>
+
+			<img src="./images/chewtoo.jpeg" class="chewToo">
+
+			<h3 class="firstbmhead">Chewable Toothpaste Tablets</h3>
+
+			<p>
+				These will cut down the amount of plastic which is being used to make tooth paste tubes and they are also easy to ship , which accounts for lesser carbon foot print. Chewable tooth paste tablets have the same tooth paste formula but they are made without water. They are easy to use and sustainable. 
+				Just chew these tablets and brush your teeth with ordinary tooth brush and you are good to go.
+				<a href="https://sustainkart.com/products/forisca-kosmetics-toothpaste-tablets?variant=38079956844731&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=Cj0KCQjw16KFBhCgARIsALB0g8LV1eGMpxasqwC2PxuwkP5OpJwbNJDmWV9bNUFEhXmBjF7W6054mr8aAmA9EALw_wcB"><p>Shop here-: SustainKart - Chewable toothpaste pills</p></a>
+			</p>
+
+			<br>
+
+			<img src="./images/bags.jpeg" class="eBags">
+
+			<h3 class="firstbmhead">Eco friendly bags</h3>
+
+			<p>
+				1. Cotton/cloth bags <br>
+				2. Jute bags <br>
+				3. Paper bags <br>
+				4. Bamboo bags <br>
+				5. Hemp bags <br>
+				<a href="https://sustainkart.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=none&q=Bags%20*"><p>Shop here-: SustainKart - Eco-Friendly bags</p></a>
+			</p>
+
+		</div>
+	</div>
+
+
+	<script>
+	function w3_open() {
+	  document.getElementById("mySidebar").style.display = "block";
+	}
+
+	function w3_close() {
+	  document.getElementById("mySidebar").style.display = "none";
+	}
+	</script>
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById('id01');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        modal.style.display = "none";
+	    }
+	}
+	</script>
+
+     
+</body>
+</html>
