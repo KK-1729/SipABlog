@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+	<title>Top blogs on Medicine, Motivation, Lifestyle and facts.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,600&display=swap" rel="stylesheet">
+
+<style>
+	
+	.responsive{
+		width: 20%;
+		height: auto;
+		padding-left: 6%;
+	}
+
+	.logo{
+		width: 18%;
+		height: auto;
+		display: block;
+		float: right;
+		margin-right: 40%;
+		margin-top: 2%;
+	}
+
+	.button {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #b76e22;
+	  color: #b76e22;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 165px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.button span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.button span:after {
+	  content: '\00ab';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  left: -20px;
+	  transition: 0.5s;
+	}
+
+	.button:hover span {
+	  padding-left: 25px;
+	}
+
+	.button:hover span:after {
+	  opacity: 1;
+	  left: 0;
+	}
+
+	.buttona {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #b76e22;
+	  color: #b76e22;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 165px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.buttona span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.buttona span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.buttona:hover span {
+	  padding-right: 25px;
+	}
+
+	.buttona:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+
+	.buttonb {
+	  border-radius: 8px;
+	  background-color: white;
+	  border: 2px solid #0e8c8c;
+	  color: #0e8c8c;
+	  text-align: center;
+	  font-size: 28px;
+	  font-family: 'Pacifico', cursive;
+	  padding: 20px;
+	  width: 190px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.buttonb span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.buttonb span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.buttonb:hover span {
+	  padding-right: 25px;
+	}
+
+	.buttonb:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+
+	input[type=text], input[type=password] {
+	  width: 90%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	  margin-left: 5%;
+	  margin-bottom: 5%;
+	}
+
+	.cancelbtn:hover{
+		background-color: #b76e22;
+  		color: black;
+	}
+
+	/* Center the image and position the close button */
+	.imgcontainer {
+	  text-align: center;
+	  margin: 24px 0 12px 0;
+	  position: relative;
+	}
+
+	.container {
+	  padding: 16px;
+	}
+
+	span.psw {
+	  float: right;
+	  padding-top: 16px;
+	}
+
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	  padding-top: 60px;
+	}
+
+	/* Modal Content/Box */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	  border: 1px solid #888;
+	  width: 40%; /* Could be more or less, depending on screen size */
+	}
+
+	/* The Close Button (x) */
+	.close {
+	  position: absolute;
+	  right: 25px;
+	  top: 0;
+	  color: #000;
+	  font-size: 35px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #b76e22;
+	  cursor: pointer;
+	}
+
+	/* Add Zoom Animation */
+	.animate {
+	  -webkit-animation: animatezoom 0.6s;
+	  animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+	  from {-webkit-transform: scale(0)} 
+	  to {-webkit-transform: scale(1)}
+	}
+	  
+	@keyframes animatezoom {
+	  from {transform: scale(0)} 
+	  to {transform: scale(1)}
+	}
+
+	/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	  span.psw {
+	     display: block;
+	     float: none;
+	  }
+	  .cancelbtn {
+	     width: 100%;
+	  }
+	}
+
+	.firstb{
+		word-wrap: break-word;
+		width: 80vw;
+		margin-left: 5%;
+	}
+
+	.firstbhead{
+		font-family: 'Arimo', sans-serif;
+		margin-left: 5%;
+		font-size: 3vw;
+	}
+
+	.firstbmhead{
+		font-family: 'Arimo', sans-serif;
+		margin-left: 1%;
+		font-size: 3vw;
+	}
+
+	.toothBrush{
+		width: 360px;
+		height: auto;
+		float: right;
+	}
+
+	@media screen and (max-width: 766px) {
+		body {
+			width: 99%;
+		}
+		.logo {
+			margin-right: 27%;
+		}
+		.slide {
+			margin-left: 30%;
+		}
+		.drops {
+			transform: translateY(-150px);
+			margin-bottom: 0;
+		}
+		.card1 {
+			/* transform: translateY(-100px) */
+			margin-top: -40%;
+		}
+		.buttonb {
+			transform: scale(0.3);
+			margin-left: -10%;
+			margin-top: -5%;
+			margin-bottom: -5%;
+		}
+		.button {
+			transform: scale(0.6);
+			margin: -7%;
+		}
+		.blog1 {
+			margin-top: -10%;
+			display: flex;
+			flex-direction: column;
+		}
+		.blog-image2 {
+			margin-right: -15.5%
+		}
+		.firstbhead {
+			font-size: 20px
+		}
+		.firstbmhead {
+			font-size: 15px
+		}
+		.blog-head {
+			margin-right: -10%;
+		}
+		.blog-card {
+			margin-top: -10%;
+		}
+		/* .w3-collapse {
+			transform: translateX(-50px);
+		} */
+	}
+
+</style>
+
+
+<body>
+
+	<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:172px; height: all; right:0;" id="mySidebar">
+	  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+	  <button class="button" onclick="document.getElementById('id01').style.display='block'"><span>Login</span></button>
+	  <br>
+		<button class="button" onclick="document.getElementById('id02').style.display='block'"><span>Sign Up</span></button>
+		<br>
+	  <button class="button" onclick="document.getElementById('id03').style.display='block'"><span>Subscribe</span></button>
+	  <br>
+	  <a href="AboutPage.html"><button class="button"><span>About</span></button></a>
+	  <br>
+	 <a href="Contact.html"><button class="button"><span>Contact</span></button></a>
+	   <br>
+	  <!-- <button class="buttona"><span>Blogs</span></button> -->
+	</div>
+		
+
+
+
+	<div id="id01" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Login</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;"> Welocome back to the world of Blogs!</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Username" name="uname" required>
+	      <br>
+	      <input type="password" placeholder="Enter Your Password" name="psw" required>
+	      <br>
+	     
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	      <br>
+	       <button type="submit" class="buttona"><span>Login</span></button>
+	       <span class="psw"><a href="#">Forgot Password?</a></span>
+	    </div>
+	  </form>
+	</div>
+
+
+
+
+	<div id="id02" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Signup</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;"> Your first step to start experiencing the blogs,<br> in a few seconds.</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Full Name" name="uname" required>
+
+	      <input type="text" placeholder="Enter Your Username" name="psw" required>
+
+	      <input type="text" placeholder="Enter Your Email ID" name="psw" required>
+
+	      <input type="password" placeholder="Enter Your Password" name="psw" required>
+
+	      <input type="password" placeholder="Re-Enter Your Password" name="psw" required>
+	        
+	      <br>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Send Notifications
+	      </label>
+	      <br>
+	      <button type="submit" class="buttona"><span>Sign Up</span></button>
+	    </div>
+	  </form>
+	</div>
+
+
+
+	<div id="id03" class="modal">
+	  <form class="modal-content animate" action="/action_page.php" method="post">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+	    </div>
+
+	    <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 6vw;">Subscribe</h3>
+	    <h4 style="text-align: center; font-family: 'Architects Daughter', cursive; font-size: 1.6vw;">To get notified when a new blog is published!</h4>
+
+	    <div class="container">
+	      <input type="text" placeholder="Enter Your Email ID" name="uname" required>
+	      <br>
+	       <button type="submit" class="buttona"><span>Subscribe</span></button>
+	    </div>
+	  </form>
+	</div>
+
+	<div class="w3-main" style="margin-right:200px">
+	<div style="color: #b76e22;">
+	  <button class="w3-button w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+	</div>
+
+	</div>
+
+	<div>
+		<a href="index.html"><img src="https://media.tenor.com/images/ee7ec2aee427884dab05c1348deae810/tenor.gif" alt="SipABlog" class="responsive" style="margin-top: 1%;"></a>
+		<a href="index.html"><img src="./images/logo.png" class="logo" class="responsive"></a>
+	</div>
+	
+	
+	<br>
+	<br>
+	<br>
+
+	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;" class="blog-card">
+		<h2 class="firstbhead blog-head" style="text-align: center; margin-left: -20%;">POSITIVE THOUGHTS ON LIFE </h2>
+		<h2 class="firstbhead">How to look at life in positive and passionate way ?</h2>
+		<h2 class="firstbhead">PERSPECTIVE MATTERS!!</h2>
+		<div class="firstb">
+			<p>
+				The most common example of different perspective is a glass half filled with water. Few see it as half filled and few as half empty. Even right and wrong about any topic is a matter of perspective from which one sees. The same applies for life too.  Believing in negative thoughts is the single greatest obstruction to success.Believe in the power of positive thinking , our thoughts create the perspective of ourselves and the world around us. <br><br>
+				Life has gifted many of us with lot of beautiful things, like a caring family, good health and the comfortable living conditions we are in today. We have to be absolutely thankful for having each one of them in our life because,<br>
+				* In India, 20 million children, about 4% of Indian population are orphans, of them parents of only 0.3% children have died and rest have been abandoned.<br>
+				* The number of people with physical disabilities(handicapped) in India was stated as 26.8 million according to 2011 census.<br>
+				* 1.77 million people in India are homeless with no proper food and hygiene.<br>
+				* Over 7000 Indians die of hunger every day. <br>
+				* Over 25 lakh Indians die of hunger every year.<br>
+				* Hunger remains the first cause of death in the world. Aids, cancer and all other deadly diseases follow.<br>
+			</p>
+
+			<img src="./images/lifemot.jpeg" class="toothBrush blog-image2">
+
+			<p>
+				Each day, due to lot of uncertain situations, few people lose their life, few lose their family members.It’s not always about losing life but they may become physically or mentally sick and lose hope as each day passes.<br>
+				After having a view about all the uncertainties listed above, just imagine how lucky we are, to have lot of reasons to smile at this moment . Be thankful for every little thing in your life because lot of people don’t have even these.<br>
+				Even with lot of difficulties, people stand up for themselves and work hard to beat all the odds in order to reach their goals, because they believe in the power of positivity and courage to step ahead each day.As the life goes on , it’s important to create opportunities rather than wasting time in waiting for them or grieving about sad part of your life. <br>
+				NICK VUJICIC, born with tetra-amelia syndrome, a rare disorder characterised by the absence of all four limbs. He have inspired millions and millions of people with his message to love life and live without limits.Nick says, he realised he had the ability to take control of his life. Instead of looking at everything he lacked, he started to look at everything he could have. Now he is a famous author and international speaker.<br>
+				JESSICA COX,Born without arms, she used her legs and her unbelievable spirit to become the first licensed armless pilot. <br>
+				J.K.ROWLING, author of Harry Potter series of books, she conceived the idea while travelling in a train. By the time she completed writing in 7years her mother died, she divorced and living in poverty.Despite being rejected over 12times , her desire dint let her down in telling the world about the remarkable story of Harry Potter. <br>
+				It is so evident from the above examples, will power, desire,hard word and determination can accomplish our dreams. <br>
+				Start standing up for yourself, know what exactly you want to be, think where you want to see yourself in next 10 years, plan accordingly, be positive and start working. It’s easy because we all are the most efficient living beings on this planet.Believe yourself. The healthiest response to life is joy and satisfaction. <br>
+				Take a deep breath and say cheers to the positivity! Start a new beginning.The first step you make towards being positive and passionate will lead all your further steps to achieve your dreams.<br>
+				You can ,you should and if your brave enough to start, you will. <br>
+				All of this comes to the matter of fact that everything has a different perspective to look at, which creates new hopes for our life and thrives us to become better and better as each day passes. <br>
+				Never let the fear of striking out keep you away from playing the game. Do all the good you can, for all the people you can, in all the ways you can, as long as you can. Life is not about what happens to you but about how positively you respond to them. Everything is in your hands. Live a healthy and happy life because everyone’s got only one, right? So perspective does matter a lot.<br>
+				 Believe you can do anything.Be positive and spread positivity.<br><br>
+				Keep smiling.<br>
+				LAYA BITLA
+
+			</p>
+
+			
+
+		</div>
+	</div>
+
+
+	<script>
+	function w3_open() {
+	  document.getElementById("mySidebar").style.display = "block";
+	}
+
+	function w3_close() {
+	  document.getElementById("mySidebar").style.display = "none";
+	}
+	</script>
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById('id01');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        modal.style.display = "none";
+	    }
+	}
+	</script>
+
+     
+</body>
+</html>

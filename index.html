@@ -271,6 +271,7 @@
 	  transition: 0.6s ease;
 	  border-radius: 0 3px 3px 0;
 	  user-select: none;
+	  background-color: rgba(0,0,0,0.8);
 	}
 
 	/* Position the "next button" to the right */
@@ -280,9 +281,9 @@
 	}
 
 	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover, .next:hover {
+	/* .prev:hover, .next:hover {
 	  background-color: rgba(0,0,0,0.8);
-	}
+	} */
 
 	/* Caption text */
 	.text {
@@ -345,6 +346,62 @@
 		margin-left: 5%;
 		font-size: 3vw;
 	}
+	.welcome{
+		position: absolute;
+		top: 45%;
+		left: 40%;
+		transform: scale(1.4);
+		border-radius: 15px
+	}
+	
+	
+	@media screen and (max-width: 1024px) {
+		.welcome{
+			position: absolute;
+			top: 14%;
+			left: 35%;
+			transform: scale(0.8);
+			border-radius: 15px
+		}
+	}
+
+	@media screen and (max-width: 766px) {
+		body {
+			width: 99%;
+		}
+		 .logo {
+			margin-right: 27%;
+		}
+		 .slide {
+			margin-left: 30%;
+		}
+		.drops {
+			transform: translateY(-20px);
+			margin-bottom: 0;
+		}  
+		.card1 {
+			/* transform: translateY(-100px) */
+			margin-top: -20%;
+		}
+		.buttonb {
+			transform: scale(0.3);
+			margin-left: -10%;
+			margin-top: -5%;
+			margin-bottom: -5%;
+			
+		}
+		.button {
+			transform: scale(0.3);
+			margin: -7%;
+		}
+		.welcome {
+			position: absolute;
+			top: -1%;
+			left: 3%;
+			transform: scale(0.4);
+			border-radius: 15px
+		}
+	}
 
 </style>
 
@@ -352,20 +409,19 @@
 <body>
 
 	<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:172px; height: all; right:0;" id="mySidebar">
-	  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-	  <button class="button" onclick="document.getElementById('id01').style.display='block'"><span>Login</span></button>
-	  <br>
-		<button class="button" onclick="document.getElementById('id02').style.display='block'"><span>Sign Up</span></button>
+		<button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+		<button class="button" onclick="document.getElementById('id01').style.display='block'"><span>Login</span></button>
 		<br>
-	  <button class="button" onclick="document.getElementById('id03').style.display='block'"><span>Subscribe</span></button>
-	  <br>
-	  <a href="AboutPage.html"><button class="button"><span>About</span></button></a>
-	  <br>
-	  <a href="Contact.html"><button class="button"><span>Contact</span></button></a>
-	   <br>
-	  <!-- <button class="buttona"><span>Blogs</span></button> -->
-	</div>
-		
+		  <button class="button" onclick="document.getElementById('id02').style.display='block'"><span>Sign Up</span></button>
+		  <br>
+		<button class="button" onclick="document.getElementById('id03').style.display='block'"><span>Subscribe</span></button>
+		<br>
+		<a href="AboutPage.html"><button class="button"><span>About</span></button></a>
+		<br>
+		<a href="Contact.html"><button class="button"><span>Contact</span></button></a>
+		 <br>
+		<!-- <button class="buttona"><span>Blogs</span></button> -->
+	  </div>
 
 
 
@@ -457,8 +513,8 @@
 	</div>
 
 	<div>
-		<a href="Home.html"><img src="https://media.tenor.com/images/ee7ec2aee427884dab05c1348deae810/tenor.gif" alt="SipABlog" class="responsive" style="margin-top: 1%;"></a>
-		<a href="Home.html"><img src="./images/logo.png" class="logo" class="responsive"></a>
+		<a href="#"><img src="https://media.tenor.com/images/ee7ec2aee427884dab05c1348deae810/tenor.gif" alt="SipABlog" class="responsive" style="margin-top: 1%;"></a>
+		<a href="#"><img src="./images/logo.png" class="logo" class="responsive"></a>
 	</div>
 
 	<br>
@@ -466,30 +522,32 @@
 
 
 
-	<div style="float: right; margin-right: 20%;">
+	<!-- <div style="float: right; margin-right: 20%;" class="slide">
 		<div class="slideshow-container">
-
+		<div class="mySlides fade">
+			<img src="./images/healthy.jpeg" style="transform: translateX(0px) scale(0.6)">
+			<div class="text" style="color: black; ">Lifestyle</div>
+		</div>
 		<div class="mySlides fade">
 		  <img src="./images/medicine.jpeg" style="width:100%">
 		  <div class="text" style="color: black;">Medicine</div>
 		</div>
-
 		<div class="mySlides fade">
-		  <img src="./images/lifestyle.jpeg" style="width:100%">
-		  <div class="text">Lifestyle</div>
+			<img src="./images/life.jpeg" style="width: 80%; transform: translateX(50px)">
+			<div class="text" style="color: black;">Lifestyle</div>
 		</div>
-
+		<div class="mySlides fade">
+			<img src="./images/keepGo.jpeg" style="width:100%">
+			<div class="text" style="color: white;">Motivation</div>
+		  </div>
 		<div class="mySlides fade">
 		  <img src="./images/facts.JPEG" style="width:100%">
 		  <div class="text">Facts</div>
-		</div>
+		</div> -->
 
-		<div class="mySlides fade">
-		  <img src="./images/keepGo.jpeg" style="width:100%">
-		  <div class="text"></div>
-		</div>
+		
 
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 		</div>
@@ -501,21 +559,21 @@
 		  <span class="dot" onclick="currentSlide(3)"></span> 
 		   <span class="dot" onclick="currentSlide(4)"></span> 
 		</div>
-	</div>
+	</div> -->
 
 	<div style="margin-left: 6%; margin-top: 2%;">
-		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn1">* Create</h3>
-		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn2">* Share</h3>
-		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn3">* Connect</h3>
-		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn4">* Inspire</h3>
+		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn1 drops">* Create</h3>
+		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn2 drops">* Share</h3>
+		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn3 drops">* Connect</h3>
+		<h3 style="font-family: 'Satisfy', cursive; font-size: 4vw;" class="mn4 drops">* Inspire</h3>
 	</div>
 	
-	
+	<img src="https://i.pinimg.com/originals/ae/20/c6/ae20c69e281d544117ff223a88ae4b2c.gif" class="welcome welcome2">
 	<br>
 	<br>
 	<br>
 
-	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;">
+	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;" class="card1">
 		<h2 class="firstbhead">LIST OF SUSTAINABLE SWAPS</h2>
 		<div class="firstb">
 			<a href="" style="cursor: pointer; text-decoration: none; font-family: 'Roboto Condensed', sans-serif; font-size: 1.5vw;"><p>
@@ -528,17 +586,16 @@
 	</div>
 
 	<br>
-	<h1 style="font-family: 'Playfair Display', serif; font-size: 3vw; margin-left: 15%; " class="head1">" Never Stop Learning, As Life Never Stops Teaching "</h1>
+	<h1 style="font-family: 'Playfair Display', serif; font-size: 2vw; margin-left: 15%; " class="head1">" Never Stop Learning, As Life Never Stops Teaching "</h1>
 	<br>
 
 	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;">
-		<h2 class="firstbhead">White fungus</h2>
+		<h2 class="firstbhead">POSITIVE THOUGHTS ON LIFE</h2>
 		<div class="firstb">
 			<a href="" style="cursor: pointer; text-decoration: none; font-family: 'Roboto Condensed', sans-serif; font-size: 1.5vw;"><p>
-				New cases of white fungus are being reported in various states of India. 
-				Governments of many states in India like Telangana, Delhi, Maharashtra, Odisha, Rajasthan, Haryana etc declared it as epidemic and notifiable disease.
+				The most common example of different perspective is a glass half filled with water. Few see it as half filled and few as half empty. Even right and wrong about any topic is a matter of perspective from which one sees. The same applies for life too. Believing in negative thoughts is the single greatest obstruction to success.Believe in the power of positive thinking , our thoughts create the perspective of ourselves and the world around us.
 			</p></a>
-			<a href="#"><button class="buttonb"><span>Coming Soon!</span></button></a>
+			<a href="blog2.html"><button class="buttonb"><span>Read More</span></button></a>
 		</div>
 	</div>
 
@@ -547,10 +604,12 @@
 	<br>
 
 	<div style="background-color: #93aaa2; padding-top: 2%; padding-bottom: 2%; color: white;">
-		<h2 class="firstbhead">How to Look at Life</h2>
+		<h2 class="firstbhead">Black Fungal disease</h2>
 		<div class="firstb">
 			<a href="" style="cursor: pointer; text-decoration: none; font-family: 'Roboto Condensed', sans-serif; font-size: 1.5vw;"><p>
-				The most common example of different perspective is a glass half filled with water. Few see it as half filled and few as half empty. Even right and wrong about any topic is a matter of perspective from which one sees. The same applies for life too. Believing in negative thoughts is the single greatest obstruction to success.Believe in the power of positive thinking , our thoughts create the perspective of ourselves and the world around us.
+				Black Fungus, also called as mucormycosis is a fungal infectious disease. It's a rare but fatal infection.
+				The infection is presented as fungus growing mostly in and around blood vessels, sinuses, oral activity, brain
+				or lungs. It can also infect other parts of body too. 
 			</p></a>
 			<a href="#"><button class="buttonb"><span>Coming Soon!</span></button></a>
 		</div>
@@ -592,32 +651,32 @@
 	</script>
 
 	<script>
-	var slideIndex = 1;
-	showSlides(slideIndex);
+	// var slideIndex = 1;
+	// showSlides(slideIndex);
 
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
+	// function plusSlides(n) {
+	//   showSlides(slideIndex += n);
+	// }
 
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
+	// function currentSlide(n) {
+	//   showSlides(slideIndex = n);
+	// }
 
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("dot");
-	  if (n > slides.length) {slideIndex = 1}    
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-	      slides[i].style.display = "none";  
-	  }
-	  for (i = 0; i < dots.length; i++) {
-	      dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";  
-	  dots[slideIndex-1].className += " active";
-	}
+	// function showSlides(n) {
+	//   var i;
+	//   var slides = document.getElementsByClassName("mySlides");
+	//   var dots = document.getElementsByClassName("dot");
+	//   if (n > slides.length) {slideIndex = 1}    
+	//   if (n < 1) {slideIndex = slides.length}
+	//   for (i = 0; i < slides.length; i++) {
+	//       slides[i].style.display = "none";  
+	//   }
+	//   for (i = 0; i < dots.length; i++) {
+	//       dots[i].className = dots[i].className.replace(" active", "");
+	//   }
+	//   slides[slideIndex-1].style.display = "block";  
+	//   dots[slideIndex-1].className += " active";
+	// }
 
 	var animate = ScrollReveal();
 
@@ -627,37 +686,34 @@
 		distance: '100px'
 	});
 	animate.reveal('.mn2', {
-		delay: 500,
+		delay: 250,
 		duration: 3000,
 		origin: 'left',
 		distance: '100px'
 	});
 	animate.reveal('.mn3', {
-		delay: 1000,
-		duration: 3000,
-		origin: 'left',
-		distance: '100px'
-	});
-	animate.reveal('.mn4', {
-		delay: 1500,
-		duration: 3000,
-		origin: 'left',
-		distance: '100px'
-	});
-	animate.reveal('.firstbhead', {
 		delay: 500,
 		duration: 3000,
 		origin: 'left',
 		distance: '100px'
 	});
+	animate.reveal('.mn4', {
+		delay: 750,
+		duration: 3000,
+		origin: 'left',
+		distance: '100px'
+	});
+	animate.reveal('.firstbhead', {
+		duration: 3000,
+		origin: 'left',
+		distance: '100px'
+	});
 	animate.reveal('.firstb', {
-		delay: 1000,
 		duration: 3000,
 		origin: 'right',
 		distance: '100px'
 	});
 	animate.reveal('.head1', {
-		delay: 1000,
 		duration: 4000,
 		origin: 'right',
 		distance: '100px'
