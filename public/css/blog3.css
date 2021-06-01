@@ -148,7 +148,9 @@ input[type=text], input[type=password] {
     background-color: #b76e22;
       color: black;
 }
-
+.upper {
+  text-transform: uppercase;
+}
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
